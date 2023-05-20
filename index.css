@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+}
+
+.container {
+  width: 100%;
+  background: black;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.card-container {
+  display: flex;
+  position: relative;
+  height: 350px;
+  width: 220px;
+}
+
+.cards {
+  position: absolute;
+  height: 350px;
+  width: 220px;
+}
+
+.cards img {
+  border-radius: 12px;
+}
+
+.card-1 {
+  transform: rotate(3deg);
+  translate: 0px;
+}
+
+.card-2 {
+  transform: rotate(-2deg);
+  translate: -17px;
+}
+
+.card-3 {
+  transform: rotate(-5deg);
+  translate: -30px 5px;
+}
+
+.card-4 {
+  transform: rotate(-10deg);
+  translate: -45px 5px;
+}
+
+.card-container:hover .card-1 {
+  transform: rotate(15deg);
+  translate: 250px 20px;
+}
+
+.card-container:hover .card-2 {
+  transform: rotate(6deg);
+  translate: 100px 0px;
+}
+.card-container:hover .card-3 {
+  transform: rotate(-10deg);
+  translate: -70px;
+}
+.card-container:hover .card-4 {
+  transform: rotate(-15deg);
+  translate: -250px 30px;
+}
+
+.small-cards {
+  position: absolute;
+  height: 120px;
+  width: 80px;
+  translate: -200px -100px;
+}
+
+.small-cards img {
+  border-radius: 16px;
+}
+
+.small-card-1 {
+  transform: rotate(3deg);
+  translate: 50px 100px;
+}
+
+.small-card-2 {
+  transform: rotate(-2deg);
+  translate: 50px 100px;
+}
+
+.small-card-3 {
+  transform: rotate(-5deg);
+  translate: 50px 100px;
+}
+
+.small-card-4 {
+  transform: rotate(-10deg);
+  translate: 50px 100px;
+}
+
+.card-container:hover .small-card-1 {
+  transform: rotate(-6deg);
+  translate: 350px -100px;
+}
+
+.card-container:hover .small-card-2 {
+  transform: rotate(20deg);
+  translate: 300px 400px;
+}
+
+.card-container:hover .small-card-3 {
+  transform: rotate(15deg);
+  translate: -300px -100px;
+}
+
+.card-container:hover .small-card-4 {
+  transform: rotate(-15deg);
+  translate: -300px 400px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.like-unlike-btn {
+  display: flex;
+  margin-top: 50px;
+}
+
+.like-unlike-btn div {
+  display: grid;
+  place-items: center;
+  margin: 0px 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.active-card {
+  animation: popUp 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.left-to-right-animate-disappears {
+  animation: left-to-right-disappears 0.4s ease-in-out;
+}
+
+@keyframes left-to-right-disappears {
+  0% {
+    transform: translateX(0px) translateY(10px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px) translateY(10px) scale(0);
+    opacity: 0;
+  }
+}
+
+.right-to-left-animate-disappears {
+  animation: right-to-left-animate-disappears 0.4s ease-in-out;
+}
+
+@keyframes right-to-left-animate-disappears {
+  0% {
+    transform: translateX(0px) translateY(10px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100px) translateY(10px) scale(0);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .card-container {
+    height: 250px;
+    width: 150px;
+    translate: 35px 0px;
+  }
+
+  .cards {
+    height: 250px;
+    width: 150px;
+  }
+
+  .card-container:hover .card-1 {
+    transform: rotate(15deg);
+    translate: 150px 15px;
+  }
+
+  .card-container:hover .card-2 {
+    transform: rotate(6deg);
+    translate: 50px 0px;
+  }
+  .card-container:hover .card-3 {
+    transform: rotate(-10deg);
+    translate: -50px;
+  }
+  .card-container:hover .card-4 {
+    transform: rotate(-20deg);
+    translate: -150px 20px;
+  }
+
+  .small-cards {
+    position: absolute;
+    height: 100px;
+    width: 80px;
+    translate: 0px 10px;
+  }
+
+  .card-container:hover .small-card-1 {
+    transform: rotate(-6deg);
+    translate: 200px -80px;
+  }
+
+  .card-container:hover .small-card-2 {
+    transform: rotate(20deg);
+    translate: 200px 250px;
+  }
+
+  .card-container:hover .small-card-3 {
+    transform: rotate(15deg);
+    translate: -200px -50px;
+  }
+
+  .card-container:hover .small-card-4 {
+    transform: rotate(-15deg);
+    translate: -180px 250px;
+  }
+}
+
+@media (max-width: 430px) {
+  .card-container {
+    height: 200px;
+    width: 130px;
+    translate: 35px 0px;
+  }
+
+  .cards {
+    height: 200px;
+    width: 130px;
+  }
+
+  .card-container:hover .card-1 {
+    transform: rotate(15deg);
+    translate: 100px 15px;
+  }
+
+  .card-container:hover .card-2 {
+    transform: rotate(6deg);
+    translate: 0px 0px;
+  }
+  .card-container:hover .card-3 {
+    transform: rotate(-10deg);
+    translate: -50px;
+  }
+  .card-container:hover .card-4 {
+    transform: rotate(-20deg);
+    translate: -100px 20px;
+  }
+
+  .small-cards {
+    position: absolute;
+    height: 80px;
+    width: 60px;
+    translate: 0px 10px;
+  }
+
+  .card-container:hover .small-card-1 {
+    transform: rotate(-6deg);
+    translate: 150px -70px;
+  }
+
+  .card-container:hover .small-card-2 {
+    transform: rotate(20deg);
+    translate: 150px 200px;
+  }
+
+  .card-container:hover .small-card-3 {
+    transform: rotate(15deg);
+    translate: -100px -50px;
+  }
+
+  .card-container:hover .small-card-4 {
+    transform: rotate(-15deg);
+    translate: -80px 200px;
+  }
+
+  .like-unlike-btn {
+    display: flex;
+    margin-top: 100px;
+  }
+
+  .like-unlike-btn div {
+    display: grid;
+    place-items: center;
+    margin: 0px 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+}
